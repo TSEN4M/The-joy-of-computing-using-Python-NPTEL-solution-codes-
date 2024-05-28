@@ -1,0 +1,21 @@
+import networkx as nx
+import matplotlib.pyplot as plt
+
+U=nx.Graph()
+print('graph U : ',U)
+G=nx.DiGraph()
+G.add_nodes_from([i for i in range(5)])
+print('nodes of G in list format : ',list(G.nodes))
+G.add_edge(1,2)
+G.add_edge(0,3)
+G.add_edge(2,3)
+G.add_edge(3,2)
+G.add_edge(3,4)
+G.add_edge(4,1)
+nx.draw(G)
+plt.show()
+print('all the edges are : ',G.in_edges)
+print('outgoing edges of node 2 are : ',G.out_edges(2))
+print('outgoinh edges of node 3 are : ',G.out_edges(3))
+print('incoming edges of node 3 are : ',G.in_edges(3))
+print('graph G : ',G)
